@@ -1,1 +1,2 @@
-# SQCS-hackathon-Quantum-Random-Walk-
+# SQCS-hackathon-Quantum-Random-Walk
+先pip install qiskit
