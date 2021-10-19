@@ -1,1 +1,15 @@
-from qiskit import QuantumCircuit, BasicAer, execute,QuantumRegister,ClassicalRegister,Aer
+from qiskit import *
+q = QuantumRegister(4)
+c = ClassicalRegister(2)
+qc = QuantumCircuit(q, c)
+qc.h(0)
+qc.barrier()
+qc.mct([0,1,2],3)
+qc.ccx(0,1,2)
+qc.cx(0,1)
+qc.barrier()
+qc.x(0)
+qc.cx(0,1)
+qc.ccx(0,1,2)
+qc.mct([0,1,2],3)
+qc.draw('mpl')
