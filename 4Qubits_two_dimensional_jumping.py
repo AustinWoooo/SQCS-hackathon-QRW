@@ -70,7 +70,6 @@ qc.x(4)
 qc.x(11)
 for i in range(1):
     qc.rx(pi/2,q[0])
-    qc.rx(pi/2,q[7])
     qc.rx(pi/2,q[14])
     qc.rx(pi/2,q[15])
     qc.h(14)
