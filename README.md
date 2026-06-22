@@ -26,6 +26,24 @@ The first rebuilt milestone includes:
 - a CLI that writes CSV data and publication-ready plots;
 - automated tests on every push and pull request.
 
+## Results
+
+The coherent walk develops sharp interference peaks that are absent from the
+binomial classical distribution:
+
+![Quantum and classical probability distributions](figures/quantum_vs_classical.svg)
+
+The full time history makes the coherent, ballistic wavefront visible:
+
+![Quantum-walk probability evolution](figures/quantum_evolution.svg)
+
+On a cycle large enough to avoid wraparound, the position variance separates
+the two processes quantitatively. The quantum walk approaches
+$\operatorname{Var}(X)\propto t^2$, while the classical walk follows
+$\operatorname{Var}(X)\propto t$:
+
+![Quantum and classical variance scaling](figures/variance_scaling.svg)
+
 ## Model
 
 The Hilbert space is $\mathcal{H}_C \otimes \mathcal{H}_P$. The two coin states
@@ -73,6 +91,7 @@ circuit = build_walk_circuit(size=32, steps=10)
 
 ```bash
 pytest
+PYTHONPATH=src python scripts/generate_figures.py
 ```
 
 The tests check probability conservation, reject non-unitary coins, ensure the
